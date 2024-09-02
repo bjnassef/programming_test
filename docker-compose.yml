@@ -1,0 +1,16 @@
+version: '3'
+services:
+  flask-app:
+    build:
+      context: Login  
+    ports:
+      - "5000:5000"
+    networks:
+      - main 
+    volumes:
+      - ./test1:/app/test1 
+      - ./Login:/app/Login               
+      - ./files_from_modeling_step:/app/files_from_modeling_step 
+
+networks:
+  main:
